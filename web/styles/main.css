@@ -1,0 +1,21 @@
+html, body {
+    font-family: "Open Sans", serif;
+    padding: 0;
+    margin: 0;
+    font-size: 20pt;
+    font-weight: 800;
+	font-style: normal;
+}
+
+#main > ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#main > ul > li {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    flex: 1 1 0px;
+}
