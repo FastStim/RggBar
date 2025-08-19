@@ -61,12 +61,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 li.style.color = color.end;
             }
 
-            let text = platform.title;
-            if (platform.count > 1)
-                text += "\nx" + platform.count;
+            const title = document.createTextNode(platform.title);
+            li.appendChild(title);
 
-            const content = document.createTextNode(text);
-            li.appendChild(content);
+            if (platform.count > 1) {
+                li.appendChild(document.createElement("br"));
+
+                const count = document.createTextNode("x" + platform.count);
+                li.appendChild(count);
+            }
+
             ul.appendChild(li);
         }
 
