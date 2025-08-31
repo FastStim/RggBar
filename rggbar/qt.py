@@ -27,7 +27,8 @@ class Platform(QtWidgets.QHBoxLayout):
 
         self.spin = QtWidgets.QSpinBox()
         self.spin.setRange(0, 100)
-        self.spin.setFixedWidth(50)
+        self.spin.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
+        # self.spin.setFixedWidth(50)
         self.spin.setValue(count)
         self.spin.valueChanged.connect(self._change_spin)
 
@@ -47,10 +48,12 @@ class Platform(QtWidgets.QHBoxLayout):
         self.setSpacing(0)
 
     def _layout(self):
-        self.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
         layout = QtWidgets.QHBoxLayout()
+        layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
+        layout.addStretch(1)
 
-        layout.addWidget(self.radio)
+        self.addWidget(self.radio, alignment=QtCore.Qt.AlignmentFlag.AlignLeft)
+
         layout.addWidget(self.spin)
         layout.addWidget(self.delete_button)
         layout.addWidget(self.up_button)
